@@ -1,4 +1,4 @@
 unity-testdrive
 ===============
 
-Try out the Unity test framework
+Investigation of the Unity test framework to enable TDD with C.
