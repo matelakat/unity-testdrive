@@ -3,8 +3,17 @@
 test: test_all
 	./test_all
 
-test_all: unity.o test_all.o test_opener.o unity_fixture.o
+main: main.o opener.o
+	$(CC) -o $@ main.o opener.o
+
+main.o: main.c opener.h
+	$(CC) -c -o $@ main.c
+
+test_all: unity.o test_all.o test_opener.o unity_fixture.o opener.o fake_file.o
 	$(CC) -o $@ $^
+
+opener.o: opener.c opener.h
+	$(CC) -c -o $@ opener.c
 
 test_%.o: test_%.c
 	$(CC) -I unity/src -I unity/extras/fixture/src -c -o $@ $^
@@ -25,5 +34,5 @@ clean: clean_binaries
 	rm -rf unity
 
 clean_binaries:
-	rm -f test_all
+	rm -f test_all main
 	rm -rf *.o

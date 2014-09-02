@@ -2,7 +2,7 @@
 
 static void RunAllTests(void)
 {
-    RUN_TEST_GROUP(ProductionCode);
+    RUN_TEST_GROUP(Opener);
 }
 
 int main(int argc, char * argv[])
