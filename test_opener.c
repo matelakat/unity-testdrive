@@ -25,7 +25,7 @@ TEST(Opener, open_overriden)
 TEST(Opener, close_overriden)
 {
     open_file("filename");
-    TEST_ASSERT_EQUAL(2, get_close_calls_counter());
+    TEST_ASSERT_EQUAL(1, get_close_calls_counter());
 }
 
 

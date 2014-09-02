@@ -28,7 +28,6 @@ unity/src/unity.c unity/src/unity.h unity/extras/fixture/src/unity_fixture.c: un
 
 unity:
 	git clone https://github.com/ThrowTheSwitch/Unity.git unity
-	$(MAKE) -C unity
 
 clean: clean_binaries
 	rm -rf unity
